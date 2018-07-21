@@ -61,13 +61,17 @@ true
 (comp first (comp rest reverse))
 
 ;; #21: Nth element
+
+;; Recursive solution
 (fn [coll n]
   (if (zero? n)
     (first coll)
     (recur (rest coll) (dec n))))
 
+;; Using the library
+#(first (drop %2 %1))
+
 
 ;; #22: Count a sequence
 (fn [coll]
-  (reduce + (map (fn [x]
-                   x 1) coll)))
+  (reduce + (map (fn [x] x 1) coll)))
