@@ -94,6 +94,24 @@ into ()
 #(reduce + %)
 
 
+;; #25: Find the odd numbers
+
+;; Recursive solution
+(fn [coll]
+  (loop [coll coll
+         acc (empty coll)]
+    (if (empty? coll)
+      (sort acc)
+      (if (odd? (first coll))
+        (recur (rest coll) (cons (first coll) acc))
+        (recur (rest coll) acc)))))
+
+;; Using the library
+(fn [coll]
+  (filter #(odd? %) coll))
+
+;; Shorter version
+#(filter odd? %)
 
 
 
