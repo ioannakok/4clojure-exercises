@@ -75,3 +75,17 @@ true
 ;; #22: Count a sequence
 (fn [coll]
   (reduce + (map (fn [x] x 1) coll)))
+
+;; #23: Reverse a sequence
+
+;; Recursive solution
+(fn [coll]
+  (loop [coll coll
+         acc (empty coll)]
+    (if (empty? coll)
+      acc
+      (recur (rest coll) (cons (first coll) acc)))))
+
+;; Using the library
+into ()
+
