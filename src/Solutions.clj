@@ -89,3 +89,29 @@ true
 ;; Using the library
 into ()
 
+
+;; #24: Sum It All Up
+#(reduce + %)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
