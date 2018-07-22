@@ -114,6 +114,17 @@ into ()
 #(filter odd? %)
 
 
+;; #26: Fibonacci Sequence
+
+;; #27: Palindrome Detector
+(fn [coll]
+  (if (empty? coll)
+    true
+    (if (= (first coll) (last coll))
+      (recur (drop 1 (drop-last coll)))
+      false)))
+
+
 
 
 
