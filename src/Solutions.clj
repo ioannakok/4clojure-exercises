@@ -73,6 +73,15 @@ true
 
 
 ;; #22: Count a sequence
+
+;; Recursive solution
+(defn my-count [coll]
+  (cond
+    (empty? coll)
+    0
+    :else (inc (my-count (rest coll)))))
+
+;; Using the library
 (fn [coll]
   (reduce + (map (fn [x] x 1) coll)))
 
