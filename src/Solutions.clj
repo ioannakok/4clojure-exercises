@@ -74,7 +74,7 @@ true
 
 ;; #22: Count a sequence
 
-;; Recursive solution
+;; Recursive count method
 (defn my-count [coll]
   (cond
     (empty? coll)
@@ -82,7 +82,7 @@ true
     :else (inc (my-count (rest coll)))))
 
 ;; Recursive solution using loop and recur
-(defn my-count [coll]
+(fn [coll]
   (loop [coll coll
          acc 0]
     (if (empty? coll)
