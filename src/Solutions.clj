@@ -81,6 +81,15 @@ true
     0
     :else (inc (my-count (rest coll)))))
 
+;; Recursive solution using loop and recur
+(defn my-count [coll]
+  (loop [coll coll
+         acc 0]
+    (if (empty? coll)
+      acc
+      (recur (rest coll) (inc acc)))))
+
+
 ;; Using the library
 (fn [coll]
   (reduce + (map (fn [x] x 1) coll)))
