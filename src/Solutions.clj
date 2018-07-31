@@ -163,8 +163,10 @@ into ()
     (list coll)))
 
 
+;; 29: Get the Caps
 
-
+(fn [word]
+  (apply str (filter #(Character/isUpperCase %) word)))
 
 
 
