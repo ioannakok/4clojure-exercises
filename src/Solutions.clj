@@ -134,6 +134,8 @@ into ()
 
 ;; #26: Fibonacci Sequence
 
+
+
 ;; #27: Palindrome Detector
 (fn [coll]
   (if (empty? coll)
@@ -142,8 +144,13 @@ into ()
       (recur (drop 1 (drop-last coll)))
       false)))
 
+;; 28: Flatten a Sequence
 
-
+;; Using the library
+(fn my-flatten [coll]
+  (if (coll? coll)
+    (mapcat my-flatten coll)
+    (list coll)))
 
 
 
