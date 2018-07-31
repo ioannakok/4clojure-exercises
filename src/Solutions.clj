@@ -148,6 +148,14 @@ into ()
 
 ;; 28: Flatten a Sequence
 
+;; Recursive solution
+(fn my-flatten [coll]
+  (if (empty? coll)
+    '()
+    (if (coll? (first coll))
+      (concat (my-flatten (first coll)) (my-flatten (rest coll)))
+      (cons (first coll) (my-flatten (rest coll))))))
+
 ;; Using the library
 (fn my-flatten [coll]
   (if (coll? coll)
