@@ -133,7 +133,9 @@ into ()
 
 
 ;; #26: Fibonacci Sequence
-
+(fn [n]
+  (take n ((fn fib [a b]
+             (lazy-seq (cons a (fib b (+ a b))))) 1 1)))
 
 
 ;; #27: Palindrome Detector
